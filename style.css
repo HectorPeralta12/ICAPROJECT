@@ -1,0 +1,122 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal, pero permite el scroll vertical */
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que el ícono está sobre otros elementos */
+}
+
+.top-nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    transition: top 0.5s ease;
+    display: block; /* Cambiado para que siempre esté presente pero oculto */
+    height: 60px; /* Define un alto específico */
+    opacity: 0; /* Inicialmente transparente */
+    transition: opacity 0.5s ease;
+}
+
+.top-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.top-nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.top-nav:hover,
+.menu-icon:hover + .top-nav {
+    opacity: 1; /* Se vuelve visible al hacer hover */
+}
+
+.carousel-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center; /* Centra verticalmente las imágenes */
+    justify-content: center; /* Centra horizontalmente las imágenes */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-out; /* Hace que el movimiento sea más suave */
+    gap: 20px; /* Asegura que hay un espacio entre las imágenes */
+}
+
+.carousel-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-image {
+    width: calc((100vw - 100px) / 4); /* Ajusta el ancho para incluir los gaps */
+    height: auto;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Filtro negro semitransparente */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+    padding: 20px;
+}
+
+.carousel-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    text-align: center;
+}
+
+
