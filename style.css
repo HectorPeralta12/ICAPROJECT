@@ -64,34 +64,133 @@ body, html {
     opacity: 1; /* Se vuelve visible al hacer hover */
 }
 
-.carousel-container {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center; /* Centra verticalmente las imágenes */
-    justify-content: center; /* Centra horizontalmente las imágenes */
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.3s ease-out; /* Hace que el movimiento sea más suave */
-    gap: 20px; /* Asegura que hay un espacio entre las imágenes */
-}
-
-.carousel-item {
-    position: relative;
+/* Estilos para la sub-sección */
+.sub-section {
+    position: fixed; /* Fijo para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Filtro negro semitransparente */
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    pointer-events: none; /* Hace que la sub-sección no interfiera con los eventos del mouse */
+    transition: opacity 0.3s ease;
+    z-index: 1000; /* Asegura que está por encima de todo */
 }
 
-.carousel-image {
-    width: calc((100vw - 100px) / 4); /* Ajusta el ancho para incluir los gaps */
-    height: auto;
+.sub-section.active {
+    opacity: 1;
+    pointer-events: auto; /* Permite la interacción cuando está activa */
+}
+
+.show-btn {
+    position: absolute;
+    top: calc(50% + 40px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que el botón está sobre otros elementos */
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.names-list {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.names-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.names-list li {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.names-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.content-display {
+    flex: 2;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para el slider */
+.slider {
+    width: 600px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.slides::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.slides > div {
+    scroll-snap-align: start;
     flex-shrink: 0;
+    width: 600px;
+    height: 600px;
+    margin-right: 50px;
+    border-radius: 10px;
+    background: #eee;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+.slider img {
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .overlay {
@@ -107,16 +206,70 @@ body, html {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
-    padding: 20px;
-}
-
-.carousel-item:hover .overlay {
-    opacity: 1;
+    text-align: center;
 }
 
 .overlay-text {
     text-align: center;
 }
 
+.slides > div:hover .overlay {
+    opacity: 1;
+}
+
+/* Actualización para botones del slider */
+.slider > button {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+    border: none;
+    cursor: pointer;
+}
+
+.slider > button:active {
+    top: 1px;
+}
+
+.slider > button:focus {
+    background: #000;
+}
+
+#section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./imagenes/noche.png');
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+/* Estilos para la sección 3 */
+#section3 .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    color: white;
+    background-color: #171617;
+}
+
+#section3 .content-image {
+    width: 40%;
+    height: auto;
+    margin-right: 20px;
+}
+
+#section3 .content-text {
+    width: 60%;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+}
 
