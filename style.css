@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: hidden; /* Evita el scroll horizontal, pero permite el scroll vertical */
+    overflow-x: hidden;/* Evita el scroll horizontal, pero permite el scroll vertical */
 }
 
 .section {
@@ -89,14 +89,20 @@ body, html {
 
 .show-btn {
     position: absolute;
-    top: calc(50% + 40px);
+    bottom: 0;
+    background-color: white;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 200px;
+    height: 60px;
     padding: 10px 20px;
     font-size: 20px;
+    border-radius: 30px;
+    border: none;
     cursor: pointer;
     z-index: 1001; /* Asegura que el botón está sobre otros elementos */
 }
+
 
 .close-btn {
     position: absolute;
@@ -273,3 +279,453 @@ body, html {
     line-height: 1.6;
 }
 
+/* Estilos para la sección 4 */
+#section4 {
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Ajusta la altura según sea necesario */
+    position: relative;
+    background-color: #171617;
+}
+
+#section4 .video-container {
+    flex: 0 0 200px; /* Ajusta el tamaño del contenedor del video */
+    margin-left: 40px; /* Espacio desde el borde izquierdo */
+    height: 60%; /* Altura del video */
+}
+
+#section4 .video-container video {
+    width: 140%;
+    height: 100%; /* Hacer el video más alto */
+}
+
+#section4 .image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+}
+
+#section4 .image-wrapper {
+    position: relative;
+    width: 80%; /* Ajusta el ancho de la imagen */
+    height: auto;
+}
+
+#section4 .image-wrapper img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto;
+    transition: all 0.3s ease;
+    position: relative; /* Cambia a relative para que se ajuste correctamente */
+}
+
+#section4 .image-wrapper:hover img {
+    filter: brightness(0.5);
+}
+
+#section4 .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#section4 .image-wrapper:hover .image-overlay {
+    opacity: 1;
+}
+
+#section4 .image-overlay-text {
+    text-align: center;
+    font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+    padding: 20px;
+}
+/* Estilos para la sección 6 */
+
+#section6 {
+    display: flex;
+    flex-direction: row-reverse; /* Invierte la disposición de los elementos */
+    align-items: center; /* Centra el contenido verticalmente */
+    min-height: 100vh; /* Asegura que la sección tenga al menos la altura de la ventana */
+    position: relative;
+    background-color: #171617;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+#section6 .image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-start; /* Alinea la imagen al inicio del contenedor */
+    align-items: flex-end;
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+}
+
+#section6 .image-wrapper {
+    position: relative;
+    width: 80%; /* Ajusta el ancho de la imagen */
+    height: auto;
+}
+
+#section6 .image-wrapper img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto;
+    transition: all 0.3s ease;
+    position: relative; /* Cambia a relative para que se ajuste correctamente */
+}
+
+#section6 .image-wrapper:hover img {
+    filter: brightness(0.5);
+}
+
+#section6 .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#section6 .image-wrapper:hover .image-overlay {
+    opacity: 1;
+}
+
+#section6 .image-overlay-text {
+    text-align: center;
+    font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+    padding: 20px;
+}
+
+#section6 .video-container {
+    flex: 0 0 200px; /* Ajusta el tamaño del contenedor del video */
+    margin-right: 140px; /* Espacio desde el borde derecho */
+    height: 60%; /* Altura del video */
+}
+
+#section6 .video-container video {
+    width: 140%;
+    height: 100%; /* Hacer el video más alto */
+}
+
+
+
+
+
+
+/* Estilos para la sección 5 */
+
+
+#section5 {
+    width: 100%;
+    padding: 20px; /* Añadir un poco de padding para darle espacio al contenido */
+    box-sizing: border-box !important;
+    overflow-y: hidden;
+    background-color: #171617;
+     /* Asegura que el padding no aumente el ancho */
+}
+  
+  #section5 .gallery-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25rem;
+    padding: 0.25rem;
+    will-change: transform;
+  }
+  
+  #section5 .card {
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  #section5 .card .card-image-wrapper {
+    height: 135%;
+    will-change: transform;
+  }
+  
+  #section5 .card .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 800px) {
+    #section5 .gallery-track {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 550px) {
+    #section5 .gallery-track {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+    /* Estilos para la sección 7 */
+
+    #section7 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* Estilos para la sección 8 */
+    #section8 {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    #section8 .background-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    #section8 {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        justify-content: flex-start; /* Alinea los elementos al inicio de la columna */
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    #section8 .background-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+     /* Transición para el zoom */
+    }
+
+    
+    
+    #section8 .slider-container {
+        position: relative;
+        text-align: center;
+        z-index: 1; /* Asegura que el slider esté por encima de la imagen de fondo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%; /* Ajusta este valor según sea necesario */
+        margin-top: 10vw; /* Asegura que el slider se coloca en la parte superior */
+    }
+    
+    #section8 .slider-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    #section8 .slider-controls button {
+        background-color: transparent;
+        border: none;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        margin: 0 20px;
+    }
+    
+    #section8 .slider-controls #constellationName {
+        font-size: 2rem;
+        color: white;
+    }
+    
+    #section8 .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: auto; /* Empuja el contenedor de la imagen hacia abajo */
+    }
+    
+    #section8 .image-container img {
+        max-width: 80%;
+        height: auto;
+        border: 2px solid white;
+    }
+    
+    /* Estilos para la sección 9 */
+
+    #section9 {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+    }
+
+    #section9 main {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      }
+      
+      #section9 .item {
+        width: 200px;
+        height: 300px;
+        list-style-type: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+        box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+        transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+      
+        &:nth-child(1), &:nth-child(2) {
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          transform: none;
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+        }
+      
+        &:nth-child(3) { left: 50%; }
+        &:nth-child(4) { left: calc(50% + 220px); }
+        &:nth-child(5) { left: calc(50% + 440px); }
+        &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+      }
+      
+      #section9 .content {
+        width: min(30vw,400px);
+        position: absolute;
+        top: 50%;
+        left: 3rem;
+        transform: translateY(-50%);
+        font: 400 0.85rem helvetica,sans-serif;
+        color: white;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+        opacity: 0;
+        display: none;
+      
+        & .title {
+          font-family: 'arial-black';
+          text-transform: uppercase;
+        }
+      
+        & .description {
+          line-height: 1.7;
+          margin: 1rem 0 1.5rem;
+          font-size: 0.8rem;
+        }
+      
+        & button {
+          width: fit-content;
+          background-color: rgba(0,0,0,0.1);
+          color: white;
+          border: 2px solid white;
+          border-radius: 0.25rem;
+          padding: 0.75rem;
+          cursor: pointer;
+        }
+      }
+      
+      #section9 .item:nth-of-type(2) .content {
+        display: block;
+        animation: show 0.75s ease-in-out 0.3s forwards;
+      }
+      
+      @keyframes show {
+        0% {
+          filter: blur(5px);
+          transform: translateY(calc(-50% + 75px));
+        }
+        100% {
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+      
+      #section9 .nav {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        user-select: none;
+      
+        & .btn {
+          background-color: rgba(255,255,255,0.5);
+          color: rgba(0,0,0,0.7);
+          border: 2px solid rgba(0,0,0,0.6);
+          margin: 0 0.25rem;
+          padding: 0.75rem;
+          border-radius: 50%;
+          cursor: pointer;
+      
+          &:hover {
+            background-color: rgba(255,255,255,0.3);
+          }
+        }
+      }
+      
+      @media (width > 650px) and (width < 900px) {
+        #section9 .content {
+          & .title        { font-size: 1rem; }
+          & .description  { font-size: 0.7rem; }
+          & button        { font-size: 0.7rem; }
+        }
+        #section9 .item {
+          width: 160px;
+          height: 270px;
+      
+          &:nth-child(3) { left: 50%; }
+          &:nth-child(4) { left: calc(50% + 170px); }
+          &:nth-child(5) { left: calc(50% + 340px); }
+          &:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
+        }
+      }
+      
+      @media (width < 650px) {
+        #section9 .content {
+          & .title        { font-size: 0.9rem; }
+          & .description  { font-size: 0.65rem; }
+          & button        { font-size: 0.7rem; }
+        }
+        #section9 .item {
+          width: 130px;
+          height: 220px;
+      
+          &:nth-child(3) { left: 50%; }
+          &:nth-child(4) { left: calc(50% + 140px); }
+          &:nth-child(5) { left: calc(50% + 280px); }
+          &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
+        }
+      }
+    
+    

@@ -63,3 +63,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const constellations = [
+            { name: 'Tortuga', image: './imagenes/Constelacion1.png' },
+            { name: 'Lobo', image: 'path/to/constellation2.jpg' },
+            { name: 'Delfín', image: 'path/to/constellation3.jpg' },
+            // Añade más constelaciones según sea necesario
+        ];
+
+        let currentIndex = 0;
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const constellationName = document.getElementById('constellationName');
+        const constellationImage = document.getElementById('constellationImage');
+
+        const updateSlider = () => {
+            constellationName.textContent = constellations[currentIndex].name;
+            constellationImage.src = constellations[currentIndex].image;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : constellations.length - 1;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < constellations.length - 1) ? currentIndex + 1 : 0;
+            updateSlider();
+        });
+
+        // Inicializar el slider con la primera constelación
+        updateSlider();
+    });
+
+    const slider = document.querySelector('#section9 .slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('#section9 .item');
+  e.target.matches('#section9 .next') && slider.append(items[0])
+  e.target.matches('#section9 .prev') && slider.prepend(items[items.length-1]);
+}
+
+document.addEventListener('click',activate,false);
+
+
+
+
+
+
+
+
+
