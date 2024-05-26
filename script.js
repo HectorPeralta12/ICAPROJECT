@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+//JS para el slider de constelaciones
 
     document.addEventListener('DOMContentLoaded', () => {
         const constellations = [
@@ -96,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Inicializar el slider con la primera constelación
         updateSlider();
     });
+
+
+    //slider de historias
 
     const slider = document.querySelector('#section9 .slider');
 

@@ -1,8 +1,64 @@
+@font-face {
+    font-family: 'AirbnbCerealW';
+    src: url('./imagenes/airbnb/AirbnbCereal_W_Bd.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AirbnbCerealW';
+    src: url('./imagenes/airbnb/AirbnbCereal_W_Bk.otf') format('opentype');
+    font-weight: 300; /* Book or Thin */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AirbnbCerealW';
+    src: url('./imagenes/airbnb/AirbnbCereal_W_Blk.otf') format('opentype');
+    font-weight: 900; /* Black */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AirbnbCerealW';
+    src: url('./imagenes/airbnb/AirbnbCereal_W_Lt.otf') format('opentype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AirbnbCerealW';
+    src: url('./imagenes/airbnb/AirbnbCereal_W_Md.otf') format('opentype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AirbnbCerealW';
+    src: url('./imagenes/airbnb/AirbnbCereal_W_XBd.otf') format('opentype');
+    font-weight: 800; /* Extra Bold */
+    font-style: normal;
+}
+
+
+
+
+
+
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow-x: hidden;/* Evita el scroll horizontal, pero permite el scroll vertical */
+    font-family: 'AirbnbCerealW', sans-serif;
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 800;
+    color: gold;
+    font-size: 45px;
 }
 
 .section {
@@ -147,7 +203,7 @@ body, html {
 
 /* Estilos para el slider */
 .slider {
-    width: 600px;
+    width: 800px;
     text-align: center;
     overflow: hidden;
 }
@@ -175,8 +231,8 @@ body, html {
 .slides > div {
     scroll-snap-align: start;
     flex-shrink: 0;
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 1000px;
     margin-right: 50px;
     border-radius: 10px;
     background: #eee;
@@ -275,7 +331,7 @@ body, html {
 #section3 .content-text {
     width: 60%;
     text-align: left;
-    font-size: 18px;
+    font-size: 35px;
     line-height: 1.6;
 }
 
@@ -345,7 +401,7 @@ body, html {
 
 #section4 .image-overlay-text {
     text-align: center;
-    font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+    font-size: 35px; /* Ajusta el tamaño del texto según sea necesario */
     padding: 20px;
 }
 /* Estilos para la sección 6 */
@@ -406,7 +462,7 @@ body, html {
 
 #section6 .image-overlay-text {
     text-align: center;
-    font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+    font-size: 35px; /* Ajusta el tamaño del texto según sea necesario */
     padding: 20px;
 }
 
@@ -600,7 +656,7 @@ body, html {
         z-index: 1;
         background-position: center;
         background-size: cover;
-        border-radius: 20px;
+       
         box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
         transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
       
@@ -627,7 +683,7 @@ body, html {
         top: 50%;
         left: 3rem;
         transform: translateY(-50%);
-        font: 400 0.85rem helvetica,sans-serif;
+        /*font: 400 0.85rem helvetica,sans-serif;*/
         color: white;
         text-shadow: 0 3px 8px rgba(0,0,0,0.5);
         opacity: 0;
@@ -641,7 +697,7 @@ body, html {
         & .description {
           line-height: 1.7;
           margin: 1rem 0 1.5rem;
-          font-size: 0.8rem;
+          font-size: 1.2rem;
         }
       
         & button {
