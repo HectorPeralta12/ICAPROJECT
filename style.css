@@ -692,7 +692,7 @@ strong {
         display: none;
       
         & .title {
-          font-family: 'arial-black';
+          font-weight: 800;
           text-transform: uppercase;
         }
       
