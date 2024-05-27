@@ -188,7 +188,8 @@ strong {
     cursor: pointer;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 2vw;
+    color: #0C8ABD;
 }
 
 .names-list li:hover {
@@ -198,12 +199,13 @@ strong {
 .content-display {
     flex: 2;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 1.6vw;
+    
 }
 
 /* Estilos para el slider */
 .slider {
-    width: 800px;
+    width: 600px;
     text-align: center;
     overflow: hidden;
 }
@@ -231,8 +233,8 @@ strong {
 .slides > div {
     scroll-snap-align: start;
     flex-shrink: 0;
-    width: 800px;
-    height: 1000px;
+    width: 600px;
+    height: 800px;
     margin-right: 50px;
     border-radius: 10px;
     background: #eee;
@@ -401,8 +403,8 @@ strong {
 
 #section4 .image-overlay-text {
     text-align: center;
-    font-size: 35px; /* Ajusta el tamaño del texto según sea necesario */
-    padding: 20px;
+    font-size: 2vw; /* Ajusta el tamaño del texto según sea necesario */
+    padding: 10vw;
 }
 /* Estilos para la sección 6 */
 
@@ -462,8 +464,8 @@ strong {
 
 #section6 .image-overlay-text {
     text-align: center;
-    font-size: 35px; /* Ajusta el tamaño del texto según sea necesario */
-    padding: 20px;
+    font-size:  2vw; /* Ajusta el tamaño del texto según sea necesario */
+    padding: 10vw;
 }
 
 #section6 .video-container {
