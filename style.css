@@ -42,23 +42,20 @@
 
 
 
-
-
-
-
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    font-size: 16px;
     overflow-x: hidden;/* Evita el scroll horizontal, pero permite el scroll vertical */
     font-family: 'AirbnbCerealW', sans-serif;
     font-weight: 300;
+    height: 100%;
 }
 
 strong {
     font-weight: 800;
-    color: gold;
-    font-size: 45px;
+    color: rgb(137, 196, 48);
+    font-size: 5vw;
 }
 
 .section {
@@ -66,6 +63,29 @@ strong {
     height: 100vh;
     position: relative;
     overflow: hidden;
+}
+
+.section-small {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(62, 100, 62);
+    align-items: center;
+    justify-content: center;
+    font-size: calc(1rem + 1vw);
+    display: flex;
+    color: #eee;
+
+}
+
+ .contentsmall div {
+    font-size: calc(2rem + 1vw);
+    font-weight: 800;
+}
+
+.contentsmall {
+    padding: 30px 30px;
 }
 
 .background-image {
@@ -90,10 +110,11 @@ strong {
     top: 0;
     width: 100%;
     background-color: white;
-    transition: top 0.5s ease;
+    /*transition: top 0.5s ease;*/
     display: block; /* Cambiado para que siempre esté presente pero oculto */
     height: 60px; /* Define un alto específico */
     opacity: 0; /* Inicialmente transparente */
+    pointer-events: none; /* Inicialmente no permite interacción */
     transition: opacity 0.5s ease;
 }
 
@@ -115,10 +136,12 @@ strong {
     font-size: 20px;
 }
 
-.top-nav:hover,
-.menu-icon:hover + .top-nav {
-    opacity: 1; /* Se vuelve visible al hacer hover */
+.top-nav.active {
+    opacity: 1; /* Se vuelve visible al hacer click */
+    pointer-events: auto; /* Permite la interacción cuando está activa */
 }
+
+
 
 /* Estilos para la sub-sección */
 .sub-section {
@@ -141,6 +164,7 @@ strong {
 .sub-section.active {
     opacity: 1;
     pointer-events: auto; /* Permite la interacción cuando está activa */
+    
 }
 
 .show-btn {
@@ -188,13 +212,15 @@ strong {
     cursor: pointer;
     margin-bottom: 10px;
     padding: 10px;
-    font-size: 2vw;
+    font-size: 5vw;
     color: #0C8ABD;
 }
 
 .names-list li:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+
 
 .content-display {
     flex: 2;
@@ -273,8 +299,12 @@ strong {
     text-align: center;
 }
 
+
+
 .overlay-text {
     text-align: center;
+    font-family: "AirbnbCerealW", sans-serif;
+    color: green;
 }
 
 .slides > div:hover .overlay {
@@ -314,6 +344,19 @@ strong {
 }
 
 /* Estilos para la sección 3 */
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 #section3 .content {
     display: flex;
     align-items: center;
@@ -328,12 +371,13 @@ strong {
     width: 40%;
     height: auto;
     margin-right: 20px;
+    animation: float 2s infinite;
 }
 
 #section3 .content-text {
     width: 60%;
     text-align: left;
-    font-size: 35px;
+    font-size: calc(1rem + 1vw);
     line-height: 1.6;
 }
 
@@ -541,96 +585,121 @@ strong {
     }
 
 
-    /* Estilos para la sección 8 */
-    #section8 {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-    
-    #section8 .background-image img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
-    
-    #section8 {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column; /* Cambia la dirección del flex a columna */
-        justify-content: flex-start; /* Alinea los elementos al inicio de la columna */
-        align-items: center;
-        overflow: hidden;
-    }
-    
-    #section8 .background-image img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-     /* Transición para el zoom */
-    }
+    /* Estilos para la sección 8 */  
+ /* Estilos para la sección 8 */
+#section8 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del flex a columna */
+    justify-content: flex-start; /* Alinea los elementos al inicio de la columna */
+    align-items: center;
+    overflow: hidden;
+}
 
-    
-    
-    #section8 .slider-container {
-        position: relative;
-        text-align: center;
-        z-index: 1; /* Asegura que el slider esté por encima de la imagen de fondo */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 80%; /* Ajusta este valor según sea necesario */
-        margin-top: 10vw; /* Asegura que el slider se coloca en la parte superior */
-    }
-    
-    #section8 .slider-controls {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    
-    #section8 .slider-controls button {
-        background-color: transparent;
-        border: none;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        margin: 0 20px;
-    }
-    
-    #section8 .slider-controls #constellationName {
-        font-size: 2rem;
-        color: white;
-    }
-    
-    #section8 .image-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: auto; /* Empuja el contenedor de la imagen hacia abajo */
-    }
-    
-    #section8 .image-container img {
-        max-width: 80%;
-        height: auto;
-        border: 2px solid white;
-    }
+#section8 .background-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#section8 .cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: opacity 3s ease-in-out; /* Transición para el desvanecimiento */
+}
+
+#section8 .cover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#section8 .cover-image.fade-out {
+    opacity: 0; /* Desvanece la imagen */
+}
+
+#section8 .cover-image.hidden {
+    z-index: -1;
+}
+
+
+#section8 .content {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté por encima de la imagen de fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 1s ease 1s; /* Transición para la opacidad, con un retraso */
+}
+
+#section8 .content.visible {
+    opacity: 1; /* Hace visible el contenido */
+    z-index: 4;
+}
+
+#section8 .slider-container {
+    position: relative;
+    text-align: center;
+    z-index: 1; /* Asegura que el slider esté por encima de la imagen de fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%; /* Ajusta este valor según sea necesario */
+    margin-top: 10vw; /* Asegura que el slider se coloca en la parte superior */
+}
+
+#section8 .slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#section8 .slider-controls button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+#section8 .slider-controls #constellationName {
+    font-size: 2rem;
+    color: white;
+}
+
+#section8 .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto; /* Empuja el contenedor de la imagen hacia abajo */
+}
+
+#section8 .image-container img {
+    max-width: 40%;
+    height: auto;
+    border: 2px solid white;
+}
     
     /* Estilos para la sección 9 */
 
@@ -772,8 +841,10 @@ strong {
       @media (width < 650px) {
         #section9 .content {
           & .title        { font-size: 0.9rem; }
-          & .description  { font-size: 0.65rem; }
+          & .description  { font-size: 0.8rem; font-weight: 400; }
           & button        { font-size: 0.7rem; }
+          left: 0.1rem;
+          width: min(50vw,300px);
         }
         #section9 .item {
           width: 130px;
@@ -786,4 +857,136 @@ strong {
         }
       }
     
+      @media only screen and (max-width: 767px) {
+
+        /* Estilos para la sección 1 */
+        #section1 .background-image {
+            content: url('./imagenes/celularbackground.png');
+            
+        }
+
+        /* Estilos para la sección 4 */
+
+        #section4 {
+            flex-direction: column; /* Cambia la dirección del flex a columna */
+            align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+            height: auto; /* Ajusta la altura automáticamente */
+            padding-bottom: 50px;
+        }
     
+        #section4 .video-container {
+            flex: 1;
+            width: 100%; /* El video ocupa todo el ancho */
+            margin: 0; /* Elimina el margen */
+            height: auto; /* Ajusta la altura automáticamente */
+        }
+    
+        #section4 .video-container video {
+            width: 100%; /* El video ocupa todo el ancho */
+            height: auto; /* Ajusta la altura automáticamente */
+        }
+    
+        #section4 .image-container {
+            flex: 1;
+            width: 100%; /* La imagen ocupa todo el ancho */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            height: auto; /* Ajusta la altura automáticamente */
+            margin-top: 20px; /* Añade un margen superior para separarlo del video */
+        }
+    
+        #section4 .image-wrapper {
+            width: 100%; /* La imagen ocupa todo el ancho */
+        }
+    
+        #section4 .image-overlay-text {
+            font-size: 3vw; /* Ajusta el tamaño del texto para dispositivos móviles */
+            padding: 5vw; /* Reduce el padding en dispositivos móviles */
+        }
+
+    /*Seccion 6*/
+    #section6 {
+        flex-direction: column-reverse; /* Cambia la dirección del flex a columna inversa */
+        align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+        height: auto; /* Ajusta la altura automáticamente */
+       min-height: 0;
+       gap: 20px;
+    }
+
+    #section6 .video-container {
+        flex: 1;
+        width: 100%; /* El video ocupa todo el ancho */
+        margin: 0; /* Elimina el margen */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    #section6 .video-container video {
+        width: 100%; /* El video ocupa todo el ancho */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    #section6 .image-container {
+        flex: 1;
+        width: 100%; /* La imagen ocupa todo el ancho */
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center; /* Centra el contenido verticalmente */
+        height: auto; /* Ajusta la altura automáticamente */
+        margin-top: 20px; /* Añade un margen superior para separarlo del video */
+    }
+
+    #section6 .image-wrapper {
+        width: 100%; /* La imagen ocupa todo el ancho */
+    }
+
+    #section6 .image-overlay-text {
+        font-size: 3vw; /* Ajusta el tamaño del texto para dispositivos móviles */
+        padding: 5vw; /* Reduce el padding en dispositivos móviles */
+    }
+
+    /*Seccion 3*/
+
+    #section3 .content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 0;
+        color: white;
+        background-color: #171617;
+    }
+    
+    #section3 .content-image {
+        width: 80%;
+        height: auto;
+        margin: auto;
+    }
+    
+    #section3 .content-text {
+        width: 60%;
+        text-align: left;
+        line-height: 1.6;
+        width: auto;
+        padding: 10px 10px;
+    }
+
+    /*Seccion Slider*/
+
+    .slides > div {
+        width: 400px;
+        height: 600px;
+    }
+
+    .slider {
+        width: 400px;
+    }
+
+    #section8 .image-container img {
+        max-width: 100%;
+    }
+
+    #section8 .slider-container {
+        width: 90%;
+        margin-top: 30vw;
+    }
+
+
+}

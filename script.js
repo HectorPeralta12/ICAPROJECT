@@ -20,9 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cambiar el contenido al hacer clic en los nombres
+    
     namesList.forEach(name => {
         name.addEventListener('click', () => {
             contentDisplay.textContent = name.getAttribute('data-content');
+            contentDisplay.style.fontSize = '2.1vw';
+            
         });
     });
 
@@ -30,24 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.querySelector('.menu-icon');
     const backgroundImage = document.querySelector('.background-image');
     const topNav = document.querySelector('.top-nav');
-
-    menuIcon.addEventListener('mouseenter', () => {
-        backgroundImage.style.transform = 'scale(0.95)';
-        topNav.style.opacity = '1'; // Hacemos visible la barra de navegación
+    
+    menuIcon.addEventListener('click', () => {
+        const isActive = topNav.classList.toggle('active');
+        backgroundImage.style.transform = isActive ? 'scale(0.95)' : 'scale(1)';
     });
-
-    backgroundImage.addEventListener('mouseleave', () => {
-        if (!topNav.matches(':hover')) { // Solo reescala si el mouse no está sobre la barra de navegación
+    
+    // Opcional: Ocultar la barra de navegación cuando se haga clic fuera de ella
+    document.addEventListener('click', (event) => {
+        if (!topNav.contains(event.target) && !menuIcon.contains(event.target)) {
+            topNav.classList.remove('active');
             backgroundImage.style.transform = 'scale(1)';
-            topNav.style.opacity = '0';
         }
     });
-
-    topNav.addEventListener('mouseleave', () => {
-        backgroundImage.style.transform = 'scale(1)';
-        topNav.style.opacity = '0';
-    });
-
+    
     // Manejar clics en los botones del slider para prevenir el comportamiento de desplazamiento
     const sliderButtons = document.querySelectorAll('.slider > button');
     const slides = document.querySelectorAll('.slides > div');
@@ -63,39 +62,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //JS para el slider de constelaciones
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const constellations = [
-            { name: 'Tortuga', image: './imagenes/Constelacion1.png' },
-            { name: 'Lobo', image: 'path/to/constellation2.jpg' },
-            { name: 'Delfín', image: 'path/to/constellation3.jpg' },
-            // Añade más constelaciones según sea necesario
-        ];
+document.addEventListener('DOMContentLoaded', () => {
+    const section8 = document.getElementById('section8');
+    const coverImage = document.getElementById('coverImage');
+    const content = document.querySelector('#section8 .content');
+    const container = document.querySelector('.slider-container');
 
-        let currentIndex = 0;
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
 
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const constellationName = document.getElementById('constellationName');
-        const constellationImage = document.getElementById('constellationImage');
-
-        const updateSlider = () => {
-            constellationName.textContent = constellations[currentIndex].name;
-            constellationImage.src = constellations[currentIndex].image;
-        };
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : constellations.length - 1;
-            updateSlider();
+                coverImage.classList.add('fade-out');
+             
+                
+                
+                // Utiliza setTimeout para añadir la clase hidden después de la animación
+                setTimeout(() => {
+                    coverImage.classList.add('hidden');
+                }, 4000); // Ajusta este tiempo al mismo que la duración de la transición
+            }
         });
+    }, { threshold: 0.1 });
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex < constellations.length - 1) ? currentIndex + 1 : 0;
-            updateSlider();
-        });
+    observer.observe(section8);
 
-        // Inicializar el slider con la primera constelación
+    // Código para el slider
+    const constellations = [
+        { name: 'Tortuga', image: './imagenes/Constelacion1.png' },
+        { name: 'Lobo', image: 'path/to/constellation2.jpg' },
+        { name: 'Delfín', image: 'path/to/constellation3.jpg' },
+        // Añade más constelaciones según sea necesario
+    ];
+
+    let currentIndex = 0;
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const constellationName = document.getElementById('constellationName');
+    const constellationImage = document.getElementById('constellationImage');
+
+    const updateSlider = () => {
+        constellationName.textContent = constellations[currentIndex].name;
+        constellationImage.src = constellations[currentIndex].image;
+    };
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : constellations.length - 1;
         updateSlider();
     });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < constellations.length - 1) ? currentIndex + 1 : 0;
+        updateSlider();
+    });
+
+    // Inicializar el slider con la primera constelación
+    updateSlider();
+});
 
 
     //slider de historias
