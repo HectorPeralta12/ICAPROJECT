@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         name.addEventListener('click', () => {
             contentDisplay.textContent = name.getAttribute('data-content');
             contentDisplay.style.fontSize = '2.1vw';
+            if (visualViewport.width < 768) {
+                contentDisplay.style.fontSize = '3.2vw';
+            }
             
         });
     });

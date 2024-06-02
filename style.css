@@ -865,6 +865,10 @@ strong {
             
         }
 
+        #section1 .content-display {
+            padding: 0;
+        }
+
         /* Estilos para la sección 4 */
 
         #section4 {
