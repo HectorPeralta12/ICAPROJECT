@@ -335,7 +335,7 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 100px;
+    font-size: calc(2.5rem + 1vw);
 }
 
 .slider img {
@@ -776,10 +776,10 @@ a:active {
       @media (width < 650px) {
         #section7 .content {
           & .title        { font-size: 0.9rem; }
-          & .description  { font-size: 0.6rem; font-weight: 300; }
+          & .description  { font-size: 0.8rem; font-weight: 300; }
           & button        { font-size: 0.7rem; }
           left: 0.5rem;
-          width: min(40vw,300px);
+          width: min(42vw,300px);
           background-color: rgba(0, 0, 0, 0.6);
           padding: 5px;
         }
@@ -1095,6 +1095,7 @@ a:active {
         width: auto;
         font-size: 1rem;
         padding: 10px 10px;
+        padding-bottom: 50px;
     }
 
     /*Seccion Slider*/
