@@ -73,7 +73,7 @@ strong {
     background-color: rgb(62, 100, 62);
     align-items: center;
     justify-content: center;
-    font-size: calc(1rem + 1vw);
+    font-size: calc(1rem + 0.5vw);
     display: flex;
     color: #eee;
 
@@ -878,7 +878,7 @@ strong {
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.5s ease;
-    font-size: 1.5vw;
+    font-size: calc(1rem + 0.5vw);
 }
 
 #section9 .image-container:hover .overlay {
@@ -987,6 +987,7 @@ strong {
         padding: 0;
         color: white;
         background-color: #171617;
+        padding-top: 4vw;
     }
     
     #section3 .content-image {
@@ -1000,6 +1001,7 @@ strong {
         text-align: left;
         line-height: 1.6;
         width: auto;
+        font-size: 1rem;
         padding: 10px 10px;
     }
 
