@@ -126,15 +126,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //slider de historias
 
-    const slider = document.querySelector('#section9 .slider');
+    const slider = document.querySelector('#section7 .slider');
 
 function activate(e) {
-  const items = document.querySelectorAll('#section9 .item');
-  e.target.matches('#section9 .next') && slider.append(items[0])
-  e.target.matches('#section9 .prev') && slider.prepend(items[items.length-1]);
+  const items = document.querySelectorAll('#section7 .item');
+  e.target.matches('#section7 .next') && slider.append(items[0])
+  e.target.matches('#section7 .prev') && slider.prepend(items[items.length-1]);
 }
 
 document.addEventListener('click',activate,false);
+
 
 
 
