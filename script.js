@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Tianquiztli', image: './constellations/pleyades.png' },
         { name: 'Citlalicue', image: './constellations/orion.png' },
         { name: 'Mixcoatl', image: './constellations/vialactea.png' },
-        { name: 'Tlahuizcalpantecuhtli', image: './constellations/venus.png' },
+        { name: 'Tlahuizcal', image: './constellations/venus.png' },
        
     ];
 
