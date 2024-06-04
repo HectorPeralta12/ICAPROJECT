@@ -56,10 +56,11 @@ body, html {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    overflow-x: hidden;/* Evita el scroll horizontal, pero permite el scroll vertical */
+    overflow-x: hidden;/* prevents horizontal scroll */
     font-family: 'AirbnbCerealW', sans-serif;
     font-weight: 300;
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 strong {
@@ -68,22 +69,23 @@ strong {
     font-size: 5vw;
 }
 
+/* a tag styles for preventing predetermined styles and colors */
 a {
-    color: inherit; /* Hereda el color del elemento padre */
-    text-decoration: none; /* Quita el subrayado predeterminado */
+    color: inherit; 
+    text-decoration: none; 
 }
 
 a:hover {
-    color: inherit; /* Mantiene el mismo color al pasar el mouse */
-    text-decoration: underline; /* O puedes aplicar un subrayado u otro estilo si deseas */
+    color: inherit; 
+    text-decoration: underline; 
 }
 
 a:visited {
-    color: inherit; /* Mantiene el color para enlaces visitados */
+    color: inherit; 
 }
 
 a:active {
-    color: inherit; /* Mantiene el color cuando el enlace está activo */
+    color: inherit; 
 }
 
 .section {
@@ -130,7 +132,7 @@ a:active {
     transform: translateX(-50%);
     font-size: 30px;
     cursor: pointer;
-    z-index: 1000; /* Asegura que el ícono está sobre otros elementos */
+    z-index: 1000; /* Ensures that the icon is on top of other elements */
 }
 
 .top-nav {
@@ -139,10 +141,10 @@ a:active {
     width: 100%;
     background-color: white;
     /*transition: top 0.5s ease;*/
-    display: block; /* Cambiado para que siempre esté presente pero oculto */
-    height: 60px; /* Define un alto específico */
-    opacity: 0; /* Inicialmente transparente */
-    pointer-events: none; /* Inicialmente no permite interacción */
+    display: block; 
+    height: 60px; /* establish an especific height */
+    opacity: 0; /* initially its transparent */
+    pointer-events: none; /* initially no pointer events */
     transition: opacity 0.5s ease;
 }
 
@@ -165,33 +167,33 @@ a:active {
 }
 
 .top-nav.active {
-    opacity: 1; /* Se vuelve visible al hacer click */
-    pointer-events: auto; /* Permite la interacción cuando está activa */
+    opacity: 1; /* its visible when you click */
+    pointer-events: auto; /* you can click when its visible */
 }
 
 
 
-/* Estilos para la sub-sección */
+/* Styles for the sub-section */
 .sub-section {
-    position: fixed; /* Fijo para cubrir toda la pantalla */
+    position: fixed; /* fixed to cover all the screen */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Filtro negro semitransparente */
+    background: rgba(0, 0, 0, 0.9); /* black filter with opacity */
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    pointer-events: none; /* Hace que la sub-sección no interfiera con los eventos del mouse */
+    pointer-events: none;  
     transition: opacity 0.3s ease;
-    z-index: 1000; /* Asegura que está por encima de todo */
+    z-index: 1000; /* Ensures is at top */
 }
 
 .sub-section.active {
     opacity: 1;
-    pointer-events: auto; /* Permite la interacción cuando está activa */
+    pointer-events: auto; /* when its active you can click */
     
 }
 
@@ -210,10 +212,11 @@ a:active {
     border-radius: 30px;
     border: none;
     cursor: pointer;
-    z-index: 1001; /* Asegura que el botón está sobre otros elementos */
+    z-index: 1001; /* bottom at top of all elements */
     transition: all 0.3s ease;
     animation: glow 1.5s infinite alternate;
 }
+
 
 .show-btn::after {
     position: absolute;
@@ -228,6 +231,7 @@ a:active {
     background-color: rgba(34, 34, 30, 0.5);
 }
 
+/* keyframes for effects in the border of the bottom, gold and black colors */
 
 @keyframes glow {
     from {
@@ -293,7 +297,7 @@ a:active {
     
 }
 
-/* Estilos para el slider */
+/* CSS for the slider */
 .slider {
     width: 600px;
     text-align: center;
@@ -353,7 +357,7 @@ a:active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Filtro negro semitransparente */
+    background: rgba(0, 0, 0, 0.7); /* black filter */
     color: white;
     display: flex;
     align-items: center;
@@ -375,7 +379,7 @@ a:active {
     opacity: 1;
 }
 
-/* Actualización para botones del slider */
+/* updates for the button of the slider */
 .slider > button {
     display: inline-flex;
     width: 1.5rem;
@@ -407,7 +411,7 @@ a:active {
     font-family: 'Ropa Sans', sans-serif;
 }
 
-/* Estilos para la sección 3 */
+/* CSS for section 3 */
 
 @keyframes float {
     0% {
@@ -445,24 +449,24 @@ a:active {
     line-height: 1.6;
 }
 
-/* Estilos para la sección 4 */
+/* CSS for section 4 */
 #section4 {
     display: flex;
-    align-items: center; /* Centra el contenido verticalmente */
-    height: 100vh; /* Ajusta la altura según sea necesario */
+    align-items: center; /* Centers the content vertically */
+    height: 100vh; /* Adjust the height */
     position: relative;
     background-color: #171617;
 }
 
 #section4 .video-container {
-    flex: 0 0 200px; /* Ajusta el tamaño del contenedor del video */
-    margin-left: 40px; /* Espacio desde el borde izquierdo */
-    height: 60%; /* Altura del video */
+    flex: 0 0 200px; 
+    margin-left: 40px; 
+    height: 60%; 
 }
 
 #section4 .video-container video {
     width: 140%;
-    height: 100%; /* Hacer el video más alto */
+    height: 100%; 
 }
 
 #section4 .image-container {
@@ -471,20 +475,20 @@ a:active {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+    height: 100%; /* Ensures the image covers the heigh of the container */
 }
 
 #section4 .image-wrapper {
     position: relative;
-    width: 80%; /* Ajusta el ancho de la imagen */
+    width: 80%; 
     height: auto;
 }
 
 #section4 .image-wrapper img {
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    width: 100%; 
     height: auto;
     transition: all 0.3s ease;
-    position: relative; /* Cambia a relative para que se ajuste correctamente */
+    position: relative; 
 }
 
 #section4 .image-wrapper:hover img {
@@ -511,41 +515,41 @@ a:active {
 
 #section4 .image-overlay-text {
     text-align: center;
-    font-size: 2vw; /* Ajusta el tamaño del texto según sea necesario */
+    font-size: 2vw; 
     padding: 10vw;
 }
-/* Estilos para la sección 5 */
+/* CSS for section 5 */
 
 #section5 {
     display: flex;
-    flex-direction: row-reverse; /* Invierte la disposición de los elementos */
-    align-items: center; /* Centra el contenido verticalmente */
-    min-height: 100vh; /* Asegura que la sección tenga al menos la altura de la ventana */
+    flex-direction: row-reverse; /* Inverts the position of the elements */
+    align-items: center; /* centers the content vertically */
+    min-height: 100vh; /* Ensures that the section has at least the height of the window */
     position: relative;
     background-color: #171617;
-    overflow: hidden; /* Asegura que el contenido no se desborde */
+    overflow: hidden; /* prevents overflow */
 }
 
 #section5 .image-container {
     flex: 1;
     position: relative;
     display: flex;
-    justify-content: flex-start; /* Alinea la imagen al inicio del contenedor */
+    justify-content: flex-start; /* Aligns the elements in the start */
     align-items: flex-end;
-    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+    height: 100%; 
 }
 
 #section5 .image-wrapper {
     position: relative;
-    width: 80%; /* Ajusta el ancho de la imagen */
+    width: 80%; /* adjusts the width  */
     height: auto;
 }
 
 #section5 .image-wrapper img {
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    width: 100%; 
     height: auto;
     transition: all 0.3s ease;
-    position: relative; /* Cambia a relative para que se ajuste correctamente */
+    position: relative; 
 }
 
 #section5 .image-wrapper:hover img {
@@ -572,33 +576,32 @@ a:active {
 
 #section5 .image-overlay-text {
     text-align: center;
-    font-size:  2vw; /* Ajusta el tamaño del texto según sea necesario */
+    font-size:  2vw; 
     padding: 10vw;
 }
 
 #section5 .video-container {
-    flex: 0 0 200px; /* Ajusta el tamaño del contenedor del video */
-    margin-right: 140px; /* Espacio desde el borde derecho */
-    height: 60%; /* Altura del video */
+    flex: 0 0 200px; /* Adjust the size for the video container */
+    margin-right: 140px; /* Space for right border */
+    height: 60%; /* height of the video */
 }
 
 #section5 .video-container video {
     width: 140%;
-    height: 100%; /* Hacer el video más alto */
+    height: 100%; /* make the video higher */
 }
 
 
 
-/* Estilos para la sección 6 */
+/* CSS for section 6 */
 
 
 #section6 {
     width: 100%;
-    padding: 20px; /* Añadir un poco de padding para darle espacio al contenido */
+    padding: 20px; /* add padding for giving space to the content */
     box-sizing: border-box !important;
     overflow-y: hidden;
     background-color: #171617;
-     /* Asegura que el padding no aumente el ancho */
 }
   
   #section6 .gallery-track {
@@ -637,7 +640,7 @@ a:active {
     }
   }
 
-    /* Estilos para la sección 7 */
+    /* CSS for section 7 */
     #section7 {
         height: 100vh;
         display: grid;
@@ -793,14 +796,14 @@ a:active {
           &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
         }
       }
- /* Estilos para la sección 8 */
+ /* CSS for section 8 */
 #section8 {
     position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Cambia la dirección del flex a columna */
-    justify-content: flex-start; /* Alinea los elementos al inicio de la columna */
+    flex-direction: column; /* change the flex direction to column */
+    justify-content: flex-start; /* aligns the items to the column */
     align-items: center;
     overflow: hidden;
 }
@@ -826,7 +829,7 @@ a:active {
     justify-content: center;
     align-items: center;
     background-color: black;
-    transition: opacity 3s ease-in-out; /* Transición para el desvanecimiento */
+    transition: opacity 3s ease-in-out; /* Transition for fade out */
 }
 
 #section8 .cover-image img {
@@ -836,7 +839,7 @@ a:active {
 }
 
 #section8 .cover-image.fade-out {
-    opacity: 0; /* Desvanece la imagen */
+    opacity: 0; /* dissapears the image */
 }
 
 #section8 .cover-image.hidden {
@@ -846,32 +849,32 @@ a:active {
 
 #section8 .content {
     position: relative;
-    z-index: 1; /* Asegura que el contenido esté por encima de la imagen de fondo */
+    z-index: 1; /* Ensures the content to be on top */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    opacity: 0; /* Inicialmente oculto */
-    transition: opacity 1s ease 1s; /* Transición para la opacidad, con un retraso */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease 1s; /* Transition for opacity with delay */
 }
 
 #section8 .content.visible {
-    opacity: 1; /* Hace visible el contenido */
+    opacity: 1; /* make content visible */
     z-index: 4;
 }
 
 #section8 .slider-container {
     position: relative;
     text-align: center;
-    z-index: 1; /* Asegura que el slider esté por encima de la imagen de fondo */
+    z-index: 1; /* to ensure that the slider its on the top */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%; /* Ajusta este valor según sea necesario */
-    margin-top: 10vw; /* Asegura que el slider se coloca en la parte superior */
+    width: 80%; 
+    margin-top: 10vw; 
 }
 
 #section8 .slider-controls {
@@ -899,7 +902,7 @@ a:active {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: auto; /* Empuja el contenedor de la imagen hacia abajo */
+    margin-top: auto; 
 }
 
 #section8 .image-container img {
@@ -907,13 +910,18 @@ a:active {
     height: auto;
 }
 
-/* Estilos para la sección 9 */
+/* CSS for section 9 */
 
 #section9 {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 200vh;
+
+}
+
+#section9 ul {
+    text-align: left;
 }
 
 #section9 .image-container {
@@ -921,6 +929,7 @@ a:active {
     flex: 1;
     overflow: hidden;
     height: 50vw;
+
 }
 
 #section9 .image-container img {
@@ -950,6 +959,8 @@ a:active {
     opacity: 1;
 }
 
+/* CSS for section-small 3 */
+
 #sectionsmall3 {
     background-color: rgb(102, 153, 174) !important;
 
@@ -977,13 +988,13 @@ a:active {
     
 }
 
- 
+ /*Adjust the responsive for small devices */
     
       @media only screen and (max-width: 767px) {
 
-        /* Estilos para la sección 1 */
+        /* CSS for section 1 */
         #section1 .background-image {
-            content: url('./imagenes/celularbackground.png');
+            content: url('./imagenes/fondo2.png'); /* Change the background image */
             
         }
 
@@ -994,82 +1005,82 @@ a:active {
         /* Estilos para la sección 4 */
 
         #section4 {
-            flex-direction: column; /* Cambia la dirección del flex a columna */
-            align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
-            height: auto; /* Ajusta la altura automáticamente */
+            flex-direction: column; /* Change the direction to column */
+            align-items: flex-start; /* Align the elements to the start */
+            height: auto; /* Adjust the height automatically */
             padding-bottom: 50px;
         }
     
         #section4 .video-container {
             flex: 1;
-            width: 100%; /* El video ocupa todo el ancho */
-            margin: 0; /* Elimina el margen */
-            height: auto; /* Ajusta la altura automáticamente */
+            width: 100%; /* The video takes the whole width */
+            margin: 0; /* Remove the margin */
+            height: auto; /* Adjust the height automatically */
         }
     
         #section4 .video-container video {
-            width: 100%; /* El video ocupa todo el ancho */
-            height: auto; /* Ajusta la altura automáticamente */
+            width: 100%; /* The video takes the whole width */
+            height: auto; /* Adjust the height automatically */
         }
     
         #section4 .image-container {
             flex: 1;
-            width: 100%; /* La imagen ocupa todo el ancho */
-            justify-content: center; /* Centra el contenido horizontalmente */
-            align-items: center; /* Centra el contenido verticalmente */
-            height: auto; /* Ajusta la altura automáticamente */
-            margin-top: 20px; /* Añade un margen superior para separarlo del video */
+            width: 100%; /* The image takes the whole width */
+            justify-content: center; 
+            align-items: center; 
+            height: auto; 
+            margin-top: 20px; 
         }
     
         #section4 .image-wrapper {
-            width: 100%; /* La imagen ocupa todo el ancho */
+            width: 100%; 
         }
     
         #section4 .image-overlay-text {
-            font-size: 3vw; /* Ajusta el tamaño del texto para dispositivos móviles */
-            padding: 5vw; /* Reduce el padding en dispositivos móviles */
+            font-size: 3vw; 
+            padding: 5vw; 
         }
 
     /*Seccion 5*/
     #section5 {
-        flex-direction: column-reverse; /* Cambia la dirección del flex a columna inversa */
-        align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
-        height: auto; /* Ajusta la altura automáticamente */
+        flex-direction: column-reverse; 
+        align-items: flex-start; 
+        height: auto; 
        min-height: 0;
        gap: 20px;
     }
 
     #section5 .video-container {
         flex: 1;
-        width: 100%; /* El video ocupa todo el ancho */
-        margin: 0; /* Elimina el margen */
-        height: auto; /* Ajusta la altura automáticamente */
+        width: 100%; 
+        margin: 0; 
+        height: auto; 
     }
 
     #section5 .video-container video {
-        width: 100%; /* El video ocupa todo el ancho */
-        height: auto; /* Ajusta la altura automáticamente */
+        width: 100%; 
+        height: auto; 
     }
 
     #section5 .image-container {
         flex: 1;
-        width: 100%; /* La imagen ocupa todo el ancho */
-        justify-content: center; /* Centra el contenido horizontalmente */
-        align-items: center; /* Centra el contenido verticalmente */
-        height: auto; /* Ajusta la altura automáticamente */
-        margin-top: 20px; /* Añade un margen superior para separarlo del video */
+        width: 100%; 
+        justify-content: center; 
+        align-items: center; 
+        height: auto; 
+        margin-top: 20px; 
     }
 
     #section5 .image-wrapper {
-        width: 100%; /* La imagen ocupa todo el ancho */
+        width: 100%; 
     }
 
     #section5 .image-overlay-text {
-        font-size: 3vw; /* Ajusta el tamaño del texto para dispositivos móviles */
-        padding: 5vw; /* Reduce el padding en dispositivos móviles */
+        font-size: 3vw; 
+        padding: 5vw; 
     }
 
-    /*Seccion 3*/
+    /*CSS for Section 3*/
 
     #section3 .content {
         display: flex;
@@ -1097,7 +1108,7 @@ a:active {
         padding-bottom: 50px;
     }
 
-    /*Seccion Slider*/
+    /*Section Slider*/
 
     .slides > div {
         width: 400px;
@@ -1117,5 +1128,10 @@ a:active {
         margin-top: 30vw;
     }
 
+
+    #section9 .image-container .overlay {
+       box-sizing: border-box; 
+         padding: 15px;
+    }
 
 }

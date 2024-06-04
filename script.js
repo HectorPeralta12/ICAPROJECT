@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const namesList = document.querySelectorAll('.names-list li');
     const contentDisplay = document.querySelector('.content-display p');
 
-    // Manejar el clic en el botón para mostrar la sub-sección
+    // manage the click on the show button
     showBtn.addEventListener('click', () => {
         subSection.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Desactivar el scroll del body
-        showBtn.style.display = 'none'; // Ocultar el botón
+        document.body.style.overflow = 'hidden'; // deactivate the scroll of the body
+        showBtn.style.display = 'none'; // hide the button
     });
 
-    // Manejar el clic en la "X" para cerrar la sub-sección
+    // manage the click on the close button
     closeBtn.addEventListener('click', () => {
         subSection.classList.remove('active');
-        document.body.style.overflow = ''; // Reactivar el scroll del body
-        showBtn.style.display = 'block'; // Mostrar el botón
+        document.body.style.overflow = ''; // active the scroll of the body
+        showBtn.style.display = 'block'; // show the button
     });
 
     // Cambiar el contenido al hacer clic en los nombres
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Código existente para el menú
+    // Code for the menu
     const menuIcon = document.querySelector('.menu-icon');
     const backgroundImage = document.querySelector('.background-image');
     const topNav = document.querySelector('.top-nav');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backgroundImage.style.transform = isActive ? 'scale(0.95)' : 'scale(1)';
     });
     
-    // Opcional: Ocultar la barra de navegación cuando se haga clic fuera de ella
+    // hide the bar when clicking outside
     document.addEventListener('click', (event) => {
         if (!topNav.contains(event.target) && !menuIcon.contains(event.target)) {
             topNav.classList.remove('active');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Manejar clics en los botones del slider para prevenir el comportamiento de desplazamiento
+    // Manage the clicks on the slider buttons
     const sliderButtons = document.querySelectorAll('.slider > button');
     const slides = document.querySelectorAll('.slides > div');
     sliderButtons.forEach(button => {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-//JS para el slider de constelaciones
+//JS for the Slider of the constellations
 
 document.addEventListener('DOMContentLoaded', () => {
     const section8 = document.getElementById('section8');
@@ -79,23 +79,23 @@ document.addEventListener('DOMContentLoaded', () => {
              
                 
                 
-                // Utiliza setTimeout para añadir la clase hidden después de la animación
+                // Use setTimeout to add the hidden class after the animation
                 setTimeout(() => {
                     coverImage.classList.add('hidden');
-                }, 4000); // Ajusta este tiempo al mismo que la duración de la transición
+                }, 4000); // 4000ms = 4s
             }
         });
     }, { threshold: 0.1 });
 
     observer.observe(section8);
 
-    // Código para el slider
+    // Code for the slider
     const constellations = [
         { name: 'Tianquiztli', image: './constellations/pleyades.png' },
         { name: 'Citlalicue', image: './constellations/orion.png' },
         { name: 'Mixcoatl', image: './constellations/vialactea.png' },
         { name: 'Tlahuizcalpantecuhtli', image: './constellations/venus.png' },
-        // Añade más constelaciones según sea necesario
+       
     ];
 
     let currentIndex = 0;
@@ -120,12 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSlider();
     });
 
-    // Inicializar el slider con la primera constelación
+    // inicialization of the slider
     updateSlider();
 });
 
 
-    //slider de historias
+    //slider of histories
 
     const slider = document.querySelector('#section7 .slider');
 
