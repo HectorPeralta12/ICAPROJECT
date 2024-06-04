@@ -91,9 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Código para el slider
     const constellations = [
-        { name: 'Tortuga', image: './imagenes/Constelacion1.png' },
-        { name: 'Lobo', image: 'path/to/constellation2.jpg' },
-        { name: 'Delfín', image: 'path/to/constellation3.jpg' },
+        { name: 'Tianquiztli', image: './constellations/pleyades.png' },
+        { name: 'Citlalicue', image: './constellations/orion.png' },
+        { name: 'Mixcoatl', image: './constellations/vialactea.png' },
+        { name: 'Tlahuizcalpantecuhtli', image: './constellations/venus.png' },
         // Añade más constelaciones según sea necesario
     ];
 
